@@ -1,0 +1,58 @@
+<form>
+    <fieldset>
+        <div class="form-group">
+            <label class="control-label" for="avg">
+                avg
+            </label>
+            <div class="input-group">
+                <input type="number" required class="form-control" #avg id="avg" value="{{avg}}"/>
+                <div class="input-group-addon">L/100KM</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label" for="km">
+                total km
+            </label>
+            <div class="input-group">
+                <input type="number" required class="form-control" #km id="km" value="{{totalkm}}"/>
+                <div class="input-group-addon">KM</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label" for="oilprice">
+                oil price
+            </label>
+            <div class="input-group">
+                <input type="number" required class="form-control" #oilprice id="oilprice" value="{{oilprice}}"/>
+                <div class="input-group-addon">NT/L</div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="cacualte(avg.value,km.value,oilprice.value)">Caculate</button>
+    </fieldset>
+    
+    <hr/>
+    
+    <div>
+        <h2>Calculate Result</h2>
+        <div class="form-group">
+            <label class="control-label" for="totalcost">
+                total cost
+            </label>
+            <div class="input-group">
+                <input type="number" readonly class="form-control" id="totalcost" value="{{totalcost}}"/>
+                <div class="input-group-addon">NT</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="avgkml">
+                --
+            </label>
+            <div class="input-group">
+                <input type="number" readonly class="form-control" id="avgkml" value="{{avgkml}}"/>
+                <div class="input-group-addon">KM/L</div>
+            </div>
+        </div>
+    </div>
+</form>
